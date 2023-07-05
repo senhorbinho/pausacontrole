@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Site Multiusuário</h1>
+    <div id="conteudo"></div>
+
+    <script src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(1);
+    }
+
+    .header img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="topo.png" alt="Cabeçalho" />
+  </div>
+
+  <style>
+    body {
+        background-image: url('fundosite.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+  <header>
+    
+    <link rel="stylesheet" type="text/css"  href="estilo.css" />
+<br><br><br>
+    
+  </header>
+  
+  <style>
+    
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+      font-size: 26px;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    td {
+      background-color: white;
+      color: black;
+      border: none; /* Removendo as bordas */
+    }
+
+    .disponivel {
+      background-color: green;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body><CENTER> <BR><BR><BR>
+  <table>
+    <tr>
+      <td style="font-size: 26px;">LARISSA<BR><CENTER><button onclick="changeStatus('larissa')">₻ PAUSA | STATUS &nbsp;</button></td>
+      <td style="font-size: 26px;">ROBSON<BR><CENTER><button onclick="changeStatus('robson')">₻ PAUSA | STATUS</button></td>
+      <td style="font-size: 26px;">DANIELA<BR><CENTER><button onclick="changeStatus('daniela')">₻ PAUSA | STATUS</button></td>
+      <td style="font-size: 26px;">GABRIEL<BR><CENTER><button onclick="changeStatus('gabriel')">₻ PAUSA | STATUS</button></td>
+    
+    <tr>
+      <td id="larissaStatus">&nbsp;-</td>
+      <td id="robsonStatus">-&nbsp;</td>
+      <td id="danielaStatus">-&nbsp;</td>
+      <td id="gabrielStatus">-&nbsp;</td>
+    </tr>
+  </table>
+
+  
+  
+  
+  <p>&nbsp;</p><script>
+    function changeStatus(name) {
+      var statusCell = document.getElementById(name + "Status");
+      var currentStatus = statusCell.innerHTML;
+      var newStatus = "";
+
+      switch (currentStatus) {
+        case "Offline":
+          newStatus = "Ausente";
+          statusCell.style.backgroundColor = "yellow";
+          statusCell.style.color = "black";
+          break;
+        case "Ausente":
+          newStatus = "Pausa Almoço";
+          statusCell.style.backgroundColor = "pink";
+          statusCell.style.color = "black";
+          break;
+        case "Pausa Almoço":
+          newStatus = "Ligação";
+          statusCell.style.backgroundColor = "orange";
+          statusCell.style.color = "black";
+          break;
+        case "Ligação":
+          newStatus = "Disponível";
+          statusCell.style.backgroundColor = "green";
+          statusCell.style.color = "white";
+          statusCell.classList.add("disponivel");
+          break;
+        case "Disponível":
+          newStatus = "Offline";
+          statusCell.style.backgroundColor = "gray";
+          statusCell.style.color = "black";
+          statusCell.classList.remove("disponivel");
+          break;
+        default:
+          newStatus = "Offline";
+          statusCell.style.backgroundColor = "gray";
+          statusCell.style.color = "black";
+          statusCell.classList.remove("disponivel");
+      }
+
+      statusCell.innerHTML = newStatus;
+    }
+
+    setInterval(function() {
+      //location.reload();
+    }, 1000);
+  </script>
+
+  <script>
+    function changeStatus(name) {
+      var statusCell = document.getElementById(name + "Status");
+      var currentStatus = statusCell.innerHTML;
+      var newStatus = "";
+
+      switch (currentStatus) {
+        case "Offline":
+          newStatus = "Ausente";
+          statusCell.style.backgroundColor = "yellow";
+          statusCell.style.color = "black";
+          break;
+        case "Ausente":
+          newStatus = "Pausa Almoço";
+          statusCell.style.backgroundColor = "pink";
+          statusCell.style.color = "black";
+          break;
+        case "Pausa Almoço":
+          newStatus = "Ligação";
+          statusCell.style.backgroundColor = "orange";
+          statusCell.style.color = "black";
+          break;
+        case "Ligação":
+          newStatus = "Disponível";
+          statusCell.style.backgroundColor = "green";
+          statusCell.style.color = "white";
+          statusCell.classList.add("disponivel");
+          break;
+        case "Disponível":
+          newStatus = "Offline";
+          statusCell.style.backgroundColor = "gray";
+          statusCell.style.color = "black";
+          statusCell.classList.remove("disponivel");
+          break;
+        default:
+          newStatus = "Offline";
+          statusCell.style.backgroundColor = "gray";
+          statusCell.style.color = "black";
+          statusCell.classList.remove("disponivel");
+      }
+
+      statusCell.innerHTML = newStatus;
+    }
+
+    setInterval(function() {
+      //location.reload();
+    }, 1000);
+  </script>
+</body>
+</html>
